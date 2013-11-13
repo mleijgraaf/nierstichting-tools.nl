@@ -114,7 +114,7 @@ $(function(){
 
     	if(error == true)
     	{
-    		alert('vul alle verplichte velden in a.u.b.');
+    		alert('Vul a.u.b. alle verplichte velden in en ga akkoord met de voorwaarden.');
     	}
     	else
     	{
@@ -158,7 +158,7 @@ $(function(){
     
 
     $('a.sharebutton').click(function(){
-        _gaq.push(['_trackEvent', 'facebook', 'facebook share', 'Deel deze actie']);
+        _gaq.push(['_trackEvent', 'Facebook', 'Share', 'https://nierstichting-tools.nl/redirect']);
     });
 
 
@@ -168,10 +168,12 @@ $(function(){
 
       
    $("#see-actievoorwaarden").fancybox({
-	width : 900,
-	height : 500,
+	width : 700,
+	height : 560,
 	fitToView : false,
 	autoSize : false,
+	centerOnScroll: true,
+	autoCenter: true,
         type              : 'iframe'  
      });
  

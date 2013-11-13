@@ -1,8 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<?php if ($facebook == true) { $class = " style=\"background:none;\""; } else { $class = ""; } ?>    
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"<?php echo $class; ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"<?php echo $class; ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"<?php echo $class; ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"<?php echo $class; ?>> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		
@@ -29,8 +30,8 @@
 
 
 	</head>
-
-	<body>
+	<?php if ($facebook == true) { $class = " style=\"background:none;\""; } else { $class = ""; } ?>
+	<body<?php echo $class; ?>>
 	    
 	    
 
@@ -48,7 +49,7 @@
 	    FB.Canvas.setAutoGrow();
 	    
 	    FB.Event.subscribe('edge.create', function(href, widget) {
-	     _gaq.push(['_trackEvent', 'facebook', 'Facebook like', href]);
+	     _gaq.push(['_trackEvent', 'Facebook', 'Like', href]);
 	    });   
 
 	    // Additional initialization code here
@@ -67,5 +68,12 @@
 	   
 	</script>
 
+	<?php if ($facebook == true) { $class = " style=\"width: 810px;height:1393px;\""; } else { $class = ""; } ?>
+	    	
+        <div class="container"<?php echo $class; ?>>
 
-	<div class="container">
+	<?php if ($facebook == true) { $class = " style=\"display: none\""; } else { $class = ""; } ?>
+	
+	    <div class="content-left"<?php echo $class; ?>></div>
+	    
+	    <div class="content-middle">

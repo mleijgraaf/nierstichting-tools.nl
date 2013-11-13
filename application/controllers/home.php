@@ -37,10 +37,14 @@ class Home extends CI_Controller {
 				$this->session->set_userdata('utm_campaign', @$jsondata->utm_campaign);
 				$this->session->set_userdata('utm_content', @$jsondata->utm_content);
 			}
+			
+			$facebook = true;
 
+		} else {
+			$facebook = false;
 		}
 		
-		
+		$this->session->set_userdata('facebook', $facebook);	
 		
 		/*
 		*	Met 'page' de view aangeven, views in folders; folder/view
@@ -49,6 +53,7 @@ class Home extends CI_Controller {
 		$data['page'] = 'home';
 		$data['content']['title'] = '';
 		$data['content']['tekst'] = '';
+		$data['content']['facebook'] = $facebook;
 		$this->load->view('template/template', $data);
 	}
 

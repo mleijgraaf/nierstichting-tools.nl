@@ -6,8 +6,8 @@
 
     $ci_index = $path . 'index.php';
 
-    //define('CRON_CI_INDEX', '/home/fabius/domains/fabiusopleidingen.nl/public_html/mbo-kantooropleidingen/opleiding/index.php');   // Your CodeIgniter main index.php file
-    define('CRON_CI_INDEX', $ci_index);   // Your CodeIgniter main index.php file
+    define('CRON_CI_INDEX', '/home/niertools/domains/nierstichting-tools.nl/public_html/index.php');   // Your CodeIgniter main index.php file
+   // define('CRON_CI_INDEX', $ci_index);   // Your CodeIgniter main index.php file
     define('CRON', TRUE);   // Test for this in your controllers if you only want them accessible via cron
 
 

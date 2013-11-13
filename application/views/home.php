@@ -1,10 +1,9 @@
 <div class="home">
     <div class="form">
-        
+       
         <div class="intro">
             <h1>WIJ GEVEN U 10 LEKKERE ZOUTARME RECEPTEN!</h1>
-            
-            Download nu het receptenboekje & <span>maak kans op een kok bij u thuis!</span>
+             Download nu het receptenboekje & <span>maak kans op een kok bij u thuis!</span>
         </div>
 
         <form method="post" name="form1" id="form1" class="autocomplete" novalidate="novalidate">
@@ -73,7 +72,7 @@
                     <div class="checkbox">
                         <input type="checkbox" value="" name="optin" id="optin" />
                     </div>
-                    <div class="label">Ja, houd me op de hoogte over Nierstichting nieuws en acties.</div>
+                    <div class="label">Ik ga akkoord met de actievoorwaarden en de Nierstichting mag mij per mail informeren over deze en volgende acties.</div>
                  
                 </div>
             </div>

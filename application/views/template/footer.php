@@ -8,6 +8,10 @@
 		    <a href="/html/actievoorwaarden.html" id="see-actievoorwaarden">Actievoorwaarden</a>
 		  </div>
 		</div>
+		
+		</div>
+		<?php if ($facebook == true) { $class = " style=\"display: none\""; } else { $class = ""; } ?>		
+		<div class="content-right"<?php echo $class; ?>></div>
 
 		</div>	<!-- / CONTAINER !-->
 

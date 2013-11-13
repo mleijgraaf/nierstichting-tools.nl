@@ -6,8 +6,6 @@ class Bedankt extends CI_Controller {
 	{
 
 		
-		
-		
 		/*
 		*	Met 'page' de view aangeven, views in folders; folder/view
 		*	de rest van de content in de content array, deze wordt automatisch doorgezet naar de view.
@@ -15,6 +13,7 @@ class Bedankt extends CI_Controller {
 		$data['page'] = 'bedankt';
 		$data['content']['title'] = '';
 		$data['content']['tekst'] = '';
+		$data['content']['facebook'] = $this->session->userdata('facebook');	;
 		$this->load->view('template/template', $data);
 	}
 
