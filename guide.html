@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		
+		<title></title>
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	    <script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+	    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+
+
+	    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	    
+	</head>
+	
+	<body>
+		
+		<Div class="container">
+			<div class="row">
+				<div class="span12">
+
+
+<h1>Feesboek boilerpleet</h1>
+
+<hr>
+
+
+
+
+<h2>App gegevens</h2>
+<p>App specifieke gegevens</p>
+<pre class="highlight">
+// application / config / app.php
+
+// Facebook gegevens
+$config['app_id'] = '';
+$config['app_secret'] = '';
+
+// Clang Token
+$config['token'] = '';
+
+// UA code
+$config['ua_code'] = '';
+</pre>
+
+
+<h2>Cronjobs</h2>
+<p>Crons uit te voeren via /crons/run.php, deze voert automiatsch /dotasks uit.</p>
+<p>Met het taken model zijn taken toe te voegen in de database, taken moeten worden ingeschoten met een naam en een uniek id van de aanvraag</p>
+<pre class="highlight">
+public function add_task($type, $uuid)
+{
+	
+	$insert_data = array(
+		'type' => $type,
+		'uuid' => $uuid
+	);
+	
+	$this->db->insert('tasks', $insert_data);
+	
+}
+</pre>
+
+<p>In tasks_model.php kun je de specifieke functies van een taak invoegen. <strong>De naam van de taak moet overeen komen met de naam van de functie!</strong><br/>
+Voorbeeld:</p>
+<pre class="highlight">
+// taak toevoegen
+add_task('verwerk_aanvraag', '123');
+
+// dan moet er dus in tasks_model.php onderaan de volgende taak zijn:
+// de taken controller stuurt alleen het unieke id van de aanvraag mee naar de functie
+function verwerk_aanvraag($uniek_id) {
+	
+	$data = $this->get_aanvraag_info($uniek_id);
+
+    $exec_data[] = array('name' => 'soap_uniqueid_brochureaanvraag', 'value' => $uniek_id);
+    $exec_data[] = array('name' => 'soap_geslacht', 'value' => $data->geslacht);
+    $exec_data[] = array('name' => 'soap_emailadres', 'value' => $data->email);
+    $exec_data[] = array('name' => 'soap_voorletters', 'value' => $data->voornaam);
+    $exec_data[] = array('name' => 'soap_tussenvoegsel', 'value' => $data->tussenvoegsel);
+    $exec_data[] = array('name' => 'soap_achternaam', 'value' => $data->achternaam);
+    $exec_data[] = array('name' => 'soap_opleiding', 'value' => $data->opleiding);
+    $exec_data[] = array('name' => 'soap_telefoon', 'value' => $data->telefoonnummer);
+    $exec_data[] = array('name' => 'soap_utm_bron', 'value' => $data->utm_source);
+    $exec_data[] = array('name' => 'soap_utm_medium', 'value' => $data->utm_medium);
+    $exec_data[] = array('name' => 'soap_utm_campaign', 'value' => $data->utm_campaign);
+    $exec_data[] = array('name' => 'soap_utm_content', 'value' => $data->utm_content);
+    $exec_data[] = array('name' => 'soap_utm_timestamp', 'value' => $data->utm_timestamp);
+    $exec_data[] = array('name' => 'soap_landingspage', 'value' => '1');
+    
+    $this->soap_model->campaign_execute(17, $exec_data);	
+
+}
+</pre>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+	
+	</body>
+</html>
