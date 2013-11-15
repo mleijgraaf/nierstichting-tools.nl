@@ -19,7 +19,7 @@
 		
 	    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	    <!--[if lt IE 9]>
-	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	    <![endif]-->
 
 		<meta property="og:url" content="https://nierstichting-tools.nl"/>
@@ -71,9 +71,12 @@
 	<?php if ($facebook == true) { $class = " style=\"width: 810px;height:1393px;\""; } else { $class = ""; } ?>
 	    	
         <div class="container"<?php echo $class; ?>>
+	
+	    
 
 	<?php if ($facebook == true) { $class = " style=\"display: none\""; } else { $class = ""; } ?>
 	
 	    <div class="content-left"<?php echo $class; ?>></div>
 	    
 	    <div class="content-middle">
+	    <div id="logo"><a href="http://www.nierstichting.nl" target="_blank"><img src="/img/logo.jpg" /></a></div>  

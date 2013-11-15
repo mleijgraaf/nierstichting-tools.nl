@@ -12,11 +12,22 @@ html, body {
 	background: url('/img/bg-pattern.gif') top left;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 
+img {
+	border: 0;
+}
 
 .container {
 	width: 960px;
 	margin:auto;
+	
+
 	
 	.content-left {
 		width: 75px;
@@ -28,6 +39,14 @@ html, body {
 	.content-middle {
 		width: 810px;
 		float: left;
+		
+	#logo {
+		top: 0;
+		position: absolute;
+		width: 810px;
+		height: 140px;
+		text-align: center;
+	}		
 	
 		.home {
 			background: url('/img/bg-landing-middle.jpg') no-repeat;
@@ -58,13 +77,13 @@ html, body {
 				
 				.formfields {
 					position: relative;
-					top: 65px;
+					top: 45px;
 					left: 25px;
 					font-size: 16px;
 					line-height: 38px;
 					font-family: @light;
 					color: @grey;
-					width: 500px;
+					width: 520px;
 					
 					.field {
 						height: 45px;
@@ -75,7 +94,7 @@ html, body {
 						}
 						
 						.right {
-							width: 281px;
+							width: 300px;
 							float: right;
 							
 							.checkbox {
@@ -90,16 +109,18 @@ html, body {
 						}
 						
 						.lower {
-								font-size: 11px
+								font-size: 11px;
 								line-height: 12px;
 							}					
 	
 						input {
 							border: 0px;
-							padding-left: 5px;
+							text-indent: 5px;
 							font-size: 12px;
-							line-height: 38px;
+							line-height: 36px;
 							font-family: @regular;
+							padding: 0;
+							margin: 0;
 						}
 		
 						.input-small {
@@ -120,7 +141,9 @@ html, body {
 							height: 38px;
 						}
 						
-	
+						.first {
+							margin-right: 5px;
+						}
 						
 						.btn-verstuur {
 							height: 38px;
@@ -175,8 +198,7 @@ html, body {
 			}
 			
 			.facebook {
-				width: 250px;
-				margin-left: 50px;
+				margin: auto;
 
 			}
 

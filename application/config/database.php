@@ -60,6 +60,13 @@ switch ($_SERVER['HTTP_HOST']) {
 		$db['default']['password'] = 'D5Emswzh';
 		$db['default']['database'] = 'backyard_niertls';
 		break;
+            
+	case 'nierstichting.mijnbackyard.nl':
+		$db['default']['hostname'] = '87.233.132.50';
+		$db['default']['username'] = 'backyard_nier';
+		$db['default']['password'] = 'D5Emswzh';
+		$db['default']['database'] = 'backyard_niertls';
+		break;            
 	
 	/*
 		Een default database aangeven, als er een cronjob

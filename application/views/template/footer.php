@@ -16,6 +16,7 @@
 		</div>	<!-- / CONTAINER !-->
 
 
+
 		<?php if ($this->config->item("live") == true) { ?>
 		<!-- Google-code voor remarketingtag -->
 		<!--------------------------------------------------
@@ -46,7 +47,12 @@
 				_gaq.push(['_setCampContentKey', '<?=$this->session->userdata("utm_content");?>']);
 			<? endif; ?>
 		  _gaq.push(['_trackPageview']);
-
+		  _gaq.push(['_setDomainName', '.nierstichting-tools.nl']);
+		  _gaq.push(['_setAllowLinker', true]);
+		  <?php  if ($page == 'bedankt') { ?>
+		  _gaq.push(['_trackPageview', '/receptenboekje/bedankt']);
+		  <?php }  ?>
+		  
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';

@@ -1,8 +1,10 @@
 <div class="home">
+    
+  
     <div class="form">
        
         <div class="intro">
-            <h1>WIJ GEVEN U 10 LEKKERE ZOUTARME RECEPTEN!</h1>
+            <h1>WIJ GEVEN U <span style="font-size:30px;color:#000000;">10</span> LEKKERE ZOUTARME RECEPTEN!</h1>
              Download nu het receptenboekje & <span>maak kans op een kok bij u thuis!</span>
         </div>
 
@@ -30,7 +32,7 @@
                 <label>Tussenvgsel + achternaam *</label>
                 </div>
                 <div class="right">
-                <input type="text" value="" name="tussenvoegsel" id="tussenvoegsel" class="input-small" /> 
+                <input type="text" value="" name="tussenvoegsel" id="tussenvoegsel" class="input-small first" /> 
                 <input type="text" value="" name="achternaam" id="achternaam" class="input-medium" /> 
                 </div>
             </div>                
@@ -47,7 +49,7 @@
                 <label>Postcode + huisnummer *</label>
                 </div>
                 <div class="right">
-                <input type="text" value="" name="postcode" id="postcode" class="input-medium postcode" /> 
+                <input type="text" value="" name="postcode" id="postcode" class="input-medium postcode first" maxlength="7" /> 
                 <input type="text" value="" name="huisnummer" id="huisnummer" class="input-small streetnumber" /> 
                 </div>
             </div>               
@@ -84,7 +86,7 @@
             <div class="field">
                 <div class="right">
                     <div class="inner-left">
-                        <img src="/img/logo-klein.gif"   />
+                        <a href="http://www.nierstichting.nl" target="_blank"><img src="/img/logo-klein.gif" alt="Nierstichting"  /></a>
                     </div>
                     <div class="inner-right">
                         <div class="title">Nierstichting Nederland</div>

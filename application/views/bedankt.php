@@ -11,14 +11,7 @@
         <p>Volg ons op Facebook</p>
         
         <div class="facebook">
-                    <div class="inner-left">
-                        <img src="/img/logo-klein.gif"   />
-                    </div>
-                    <div class="inner-right">
-                        <div class="title">Nierstichting Nederland</div>
-                        <div class="fb-like" data-href="https://www.facebook.com/nierstichting" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
-                    </div>
-            
+            <div class="fb-like-box" data-href="https://www.facebook.com/nierstichting" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
         </div>
     
     </div>

@@ -1,9 +1,18 @@
 
 
-function validateEmail(elementValue){      
+function validateEmail(str){      
    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-   return emailPattern.test(elementValue); 
- } 
+   return emailPattern.test(str); 
+ }
+ 
+function validatePostcode(str) {
+      var regex =  /^\b[0-9]{4}\b$/;
+    if (regex.test(str) || /^\b[0-9]{4}\s?[a-zA-Z]{2}\b$/.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+} 
 
 function shareOnFacebook() {
 
@@ -12,9 +21,9 @@ function shareOnFacebook() {
 	method: 'feed',
 	link: 'https://nierstichting-tools.nl/redirect?utm_source=facebook.com&utm_medium=CPC&utm_campaign=downloadboekje&utm_content=receptenboekje',
 	picture: 'https://nierstichting-tools.nl/Facebook_200x200.png',
-	name: 'Koken met minder zout, net zo lekker',
-	caption: '',
-	description: 'Minder zout eten is net zo lekker en beter voor je nieren. Download het receptenboekje!'
+	name: 'Download het receptenboekje en win een topkok aan huis voor 4 personen!',
+	caption: 'nierstichting.nl/receptenboekje',
+	description: 'Meer dan 85% van de Nederlanders consumeert teveel zout. De Nierstichting heeft een heerlijk receptenboekje samengesteld met zoutarme recepten, maar net zo lekker.'
 	},
     
     function(response) {
@@ -27,8 +36,13 @@ function shareOnFacebook() {
 
 );
 
+}
 
-
+function fancyAlert(msg) {
+    jQuery.fancybox({
+        'modal' : true,
+        'content' : "<div style=\"margin:1px;width:240px;font-family:Arial,sans-serif;font-size:12px;\">"+msg+"<div style=\"text-align:right;margin-top:10px;\"><input style=\"margin:3px;padding:0px;\" type=\"button\" onclick=\"jQuery.fancybox.close();\" value=\"Ok\"></div></div>"
+    });
 }
 
 $(function(){
@@ -66,7 +80,7 @@ $(function(){
 			
 			else
 			{
-				alert('U moet de app toestaan om verder te kunnen gaan.');
+				fancyAlert('U moet de app toestaan om verder te kunnen gaan.');
 			}
 			
 		}, {scope: 'email'});
@@ -94,7 +108,7 @@ $(function(){
         
     	if( voornaam == '' ) { error = true; }
     	if( achternaam == '' ) { error = true; }
-    	if( postcode == '' ) { error = true; }
+    	if( !validatePostcode(postcode) ) { error = true; }
     	if( huisnummer == '' ) { error = true; }
     	if( adres == '' ) { error = true; }
     	if( plaats == '' ) { error = true; }
@@ -114,7 +128,7 @@ $(function(){
 
     	if(error == true)
     	{
-    		alert('Vul a.u.b. alle verplichte velden in en ga akkoord met de voorwaarden.');
+    		fancyAlert('Vul a.u.b. alle verplichte velden in en ga akkoord met de voorwaarden.');
     	}
     	else
     	{
